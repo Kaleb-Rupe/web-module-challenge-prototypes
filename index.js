@@ -91,17 +91,22 @@ Car.prototype.drive = function(distance) {
 
 function Baby(name, age, favoriteToy) {
   Person.call(this, name, age);
-
+  this.favoriteToy = favoriteToy;
 }
 
+Baby.prototype = Object.create(Person.prototype);
+
+Baby.prototype.play = function() {
+  return `Playing with ${this.favoriteToy}`;
+}
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window binding-is when you do not give 'this' any context/binding.
+  2. Implicit Binding-Applies to objects with methods and when invoked the 'this' is to the left of the dot.
+  3. Explicit Binding-Is when you specify what 'this' is binding to.
+  4. New Binding-is creating a 'new' binding for the keyword 'this'
 */
 
 ///////// END OF CHALLENGE /////////
